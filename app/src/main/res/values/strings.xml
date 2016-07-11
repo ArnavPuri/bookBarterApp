@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Book Barter</string>
+
+    <string-array name="book_genre">
+        <item>Non-fiction</item>
+        <item>Comedy</item>
+        <item>Drama</item>
+        <item>Romance</item>
+        <item>Thriller</item>
+        <item>Academics</item>
+        <item>Other</item>
+    </string-array>
+</resources>

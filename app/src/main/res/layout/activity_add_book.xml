@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="in.teachcoder.bookbarter.AddBookActivity">
+
+
+    <EditText
+        android:id="@+id/book_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title of the book" />
+
+    <EditText
+        android:id="@+id/book_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Author of the book" />
+
+    <Spinner
+        android:id="@+id/book_genre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp">
+
+        <RadioButton
+            android:id="@+id/book_exchange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exchange" />
+
+        <RadioButton
+            android:id="@+id/book_borrow_paid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Borrow at Rs 5/day" />
+
+        <RadioButton
+            android:id="@+id/book_borrow_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Borrow" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/save_book_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@color/colorPrimaryDark"
+        android:padding="8dp"
+        android:text="Add The Book"
+        android:textColor="@android:color/white" />
+</LinearLayout>
