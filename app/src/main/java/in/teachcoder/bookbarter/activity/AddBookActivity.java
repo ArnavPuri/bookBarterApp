@@ -1,5 +1,6 @@
 package in.teachcoder.bookbarter.activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -82,6 +83,9 @@ public class AddBookActivity extends AppCompatActivity {
                 BookItem bookItem = new BookItem(bookTitle.getText().toString(), bookAuthor.getText().toString()
                         , genre, userName, preferredMode);
                 bookItemRef.push().setValue(bookItem);
+
+                Intent intent = new Intent(AddBookActivity.this,MainActivity.class);
+                startActivity(intent);
             }
         });
 
