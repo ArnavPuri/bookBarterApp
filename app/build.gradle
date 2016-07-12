@@ -30,6 +30,9 @@ dependencies {
 
     //firebase UI
     compile 'com.firebaseui:firebase-ui-database:0.4.2'
+    //Authentication dependencies
+    compile 'com.google.firebase:firebase-auth:9.2.0'
+    compile 'com.google.android.gms:play-services-auth:9.2.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

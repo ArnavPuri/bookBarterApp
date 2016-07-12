@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Book Barter</string>
-
     <string-array name="book_genre">
         <item>Non-fiction</item>
         <item>Comedy</item>
