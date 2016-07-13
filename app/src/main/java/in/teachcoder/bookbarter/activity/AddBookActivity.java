@@ -25,11 +25,11 @@ public class AddBookActivity extends AppCompatActivity {
     EditText bookTitle, bookAuthor;
     RadioGroup mode;
     Button addBook;
-    DatabaseReference bookItemRef;
+    DatabaseReference bookItemRef, cityItemRef;
     String preferredMode, genre;
     int checkedRadioButtonId;
     SharedPreferences sp;
-    String userName;
+    String userName, location;
 
 
     @Override
@@ -42,9 +42,14 @@ public class AddBookActivity extends AppCompatActivity {
         bookAuthor = (EditText) findViewById(R.id.book_author);
         mode = (RadioGroup) findViewById(R.id.radioGroup);
         addBook = (Button) findViewById(R.id.save_book_btn);
+
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        location = sp.getString(Constants.USER_LOCATION, "None");
         //initializing firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         bookItemRef = database.getReference(Constants.FIREBASE_LOCATION_BOOKITEM);
+        cityItemRef = database.getReference(Constants.FIREBASE_LOCATION_BOOKITEM).child(location);
+
 
         //Populating genres
         ArrayAdapter<CharSequence> genreAdapter = ArrayAdapter.createFromResource(this,
@@ -82,7 +87,7 @@ public class AddBookActivity extends AppCompatActivity {
                 genre = (String) genreList.getSelectedItem();
                 BookItem bookItem = new BookItem(bookTitle.getText().toString(), bookAuthor.getText().toString()
                         , genre, userName, preferredMode);
-                bookItemRef.push().setValue(bookItem);
+                cityItemRef.push().setValue(bookItem);
 
                 Intent intent = new Intent(AddBookActivity.this,MainActivity.class);
                 startActivity(intent);

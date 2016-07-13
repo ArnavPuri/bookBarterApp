@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     private void updateUI(boolean b) {
         if (b) {
-            Intent i = new Intent(this, MainActivity.class);
+            Intent i = new Intent(this, LocationActiviy.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);
         } else
